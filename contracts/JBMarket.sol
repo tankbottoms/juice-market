@@ -218,6 +218,8 @@ contract JBMarket is IJBMarket, Ownable, ReentrancyGuard {
     // Transfer the item.
     _collection.safeTransferFrom(address(this), _beneficiary, _itemId);
 
+    minPrice[_collection][_itemId] = 0;
+
     emit Buy(_collection, _itemId, _beneficiary, msg.value, _memo, msg.sender);
   }
 
