@@ -332,7 +332,7 @@ contract JBMarket is IJBMarket, Ownable, ReentrancyGuard {
 
       // The amount to send towards the split.
       uint256 _settleAmount = PRBMath.mulDiv(
-        _amount,
+        _leftoverAmount,
         _split.percent,
         JBConstants.SPLITS_TOTAL_PERCENT
       );
